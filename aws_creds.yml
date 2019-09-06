@@ -29,6 +29,7 @@
       tower_password: r3dh4t1!
       ssh_key_data: "/root/.ssh/{{ file_to_copy.stdout }}"
       username: ec2-user
+      validate_cert: "no"
   - name: Update Prod Job template
     tower_job_template:
       name: "3 tier app on Prod"
@@ -40,6 +41,7 @@
       job_type: run
       playbook: site-3tier-app.yml
       project: "Homework Assignment"
+      validate_cert: "no"
   - name: Update Prod Smoke Job template
     tower_job_template:
       name: "Smoke test Prod env"
@@ -51,5 +53,6 @@
       job_type: run
       playbook: site-smoketest-aws.yml
       project: "Homework Assignment"
+      validate_cert: "no"
 
     
